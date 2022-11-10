@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1>Employee Details- Django </h1>
+    <div>
+        
+        <ol>
+            {% for i in EmpDetails %}
+                <li>User Info</li>
+                    <ul>
+                        <li>First Name : {{i.firstname}}</li>
+                        <li>Last Name: {{i.lastname}}</li>
+                        <li>Email: {{i.email}}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ol>
+      
+        {% comment %} <table class="table table-striped table-dark">
+            <tr> 
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Email </th>
+            </tr>
+            {% for i in EmpDetails %}
+            <tr>
+                <td>{{i.firstname}}</td>
+                <td>{{i.lastname}}</td>
+                <td>{{i.email}}</td>
+
+            </tr>
+            {% endfor %}
+        </table> {% endcomment %}
+    </div>
+</body>
+</html>

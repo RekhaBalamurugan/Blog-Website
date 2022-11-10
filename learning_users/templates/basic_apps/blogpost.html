@@ -1,0 +1,11 @@
+{% extends "basic_apps/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="container">
+    <h1 class="my-3"> {{blog.title}} </h1>
+    <div class="row">
+        {{blog.body|safe}}
+    </div>
+</div>
+
+{% endblock %}

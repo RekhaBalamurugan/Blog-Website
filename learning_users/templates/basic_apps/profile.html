@@ -1,0 +1,14 @@
+{% extends "basic_apps/base.html" %}
+{% load staticfiles %}
+{% block blogactive %}active{% endblock  %}
+{% block body_block %}
+<div class="content-section">
+    <div class="media shadow-lg p-3 mb-5 bg-white rounded">
+        <img class="rounded-circle account-img" src="{{ user.userprofileinfo.profile_pic.url }}" height=150,width=150>
+        <div class="media-body">
+            <h2 class="account-heading"> {{ user.first_name }} {{ user.last_name }} </h2>
+            <p> {{ user.email }} </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

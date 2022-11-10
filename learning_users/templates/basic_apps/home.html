@@ -1,0 +1,26 @@
+{% extends "basic_apps/base.html" %}
+{% block blogactive %}active{% endblock  %}
+{% block body_block %}
+
+<div class="jumbotron jumbotron-fluid container">
+    <h1 class="display-4"> Blog </h1>
+    {% for blog in blogs %}
+    <div class="media">
+        <div class="media-body my-4">
+          <h5 class="text-dark"><a href="{% url 'basic_app:post' blog.slug %}" class="text-dark"> {{ blog.title }} </a></h5>
+          <div>
+          {{blog.body|truncatechars:300|safe}}...
+          </div>
+        </div>
+        <button class="btn btn-primary"><a href="{% url 'basic_app:post' blog.slug %}" class="text-light">Read More... </a></button>
+        <hr />
+    </div>
+    {% endfor %}
+  {% comment %}   <ul>
+    {% for blog in blogs %}
+        <li>{{ blog.title }} </li>
+    {% endfor %}
+    </ul>  {% endcomment %}
+</div>
+
+{% endblock %}
